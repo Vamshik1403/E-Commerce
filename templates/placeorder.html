@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load static %}
+<div class="container">
+
+        <div class="row mt-5">
+            <div class="col-md-9">
+                <h5 class="bg-danger">Customer details</h5>
+                <p><strong>Email:</strong></p>
+                <h5 class="bg-danger">Cart details</h5>
+                <div class="row">
+
+                  {% for product in products %}
+                    <div class="col-md-4">
+                        <img class="img-fluid" src="{{product.pid.pimage.url}}" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <p><strong>Name: {{product.pid.name}}</strong></p>
+                        <p><strong>Price: {{product.pid.price}}</strong></p>
+                        
+                        <p><strong>Details: {{product.pid.pdetails}}</strong></p>
+                        <a href="/updateqty/0/{{product.id}}"><button class="btn btn-danger">-</button></a>
+                        <input type="number" value="{{product.quantity}}">
+                        <a href="/updateqty/1/{{product.id}}"><button class="btn btn-success">+</button></a>
+                       
+                        <a href="/remove/{{product.id}}"><button class="btn btn-danger">Remove</button></a>
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h5 class="bg-danger">Total Amount</h5>
+                <p><strong>Total ({{np}} items): Rs. {{sum}}</strong></p>
+                <a href="/makepayment"><button class="btn btn-danger">Make Payment</button></a>
+                
+            </div>
+        </div>
+
+      </div>
+
+      {% endblock 'content' %}

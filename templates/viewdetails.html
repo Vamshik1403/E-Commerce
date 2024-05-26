@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load static %}
+    <div class="container bg-info-subtle">
+      
+        <div class="row">
+          <div class="col-md-8 mt-5 mx-auto">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{{product.pimage.url}}" class="img-fluid" alt="...">
+              </div>
+              <div class="col-md-6">
+                <h3>Product Name: {{product.name}}</h3>
+                <hr>
+                <h3>Price: {{product.price}}</h3>
+                <hr>
+                <h3>Product Description: {{product.pdetails}}</h3>
+                <hr>
+              <a href="/addtocart/{{product.id}}"> <button class="btn btn-danger">Add to cart</button></a>
+              <a href="/viewcart"> <button class="btn btn-danger">View cart</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-md-9 mt-5">
+                <div class="row">
+                    <div class="card" style="width: 100%;">
+                        <img src="./assets/images/product1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4 class="card-title">Apple</h4>
+                          <p class="card-text"><h4> iPhone 15 Pro Max (256 GB) - Natural Titanium</h4><br>
+                            <a href="www.apple.com">Visit the apple store</a> <br>
+                            200+ bought in last month
+                            <hr>
+                            <inline><i class="bi bi-currency-rupee">1,59,900</i></inline><hr>
+                            About this item<br>
+                            FORGED IN TITANIUM — iPhone 15 Pro Max has a strong and light aerospace-grade titanium design with a textured matte-glass back. It also features a Ceramic Shield front that's tougher than any smartphone glass. And it's splash, water, and dust resistant.<br>
+                            ADVANCED DISPLAY — The 6.7” Super Retina XDR display with ProMotion ramps up refresh rates to 120Hz when you need exceptional graphics performance. Dynamic Island bubbles up alerts and Live Notifications. Plus, with Always-On display, your Lock Screen stays glanceable, so you don't have to tap it to stay in the know.<br>
+                            GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile games feel so immersive, with rich environments and realistic characters. A17 Pro is also incredibly efficient and helps to deliver amazing all-day battery life.<br>
+                            POWERFUL PRO CAMERA SYSTEM — Get incredible framing flexibility with 7 pro lenses. Capture super high-resolution photos with more color and detail using the 48MP Main camera. And take sharper close-ups from farther away with the 5x Telephoto camera on iPhone 15 Pro Max.<br>
+                            CUSTOMIZABLE ACTION BUTTON — Action button is a fast track to your favorite feature. Just set the one you want, like Silent mode, Camera, Voice Memo, Shortcut, and more. Then press and hold to launch the action.
+                        </p>
+                        </div>
+                      </div>
+                </div>
+            </div>-->
+            {% endblock 'content' %}
